@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import ProductList from './ProductList'
+import ProductList from '../components/ProductList'
 import { fetchProducts } from '../api/products'
+import styles from './HomePage.module.css'
 
 const PAGE_SIZE = 30
 
@@ -26,12 +27,12 @@ export default function HomePage() {
   if (error) return <div>Error: {error}</div>
 
   return (
-    <div style={{ padding: 24 }}>
-      <h1>Products</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Products</h1>
       <ProductList products={products} />
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 24 }}>
+      <div className={styles.pagination}>
         <button onClick={handlePrev} disabled={page === 1}>Previous</button>
-        <span>Page {page}</span>
+        <span className={styles.pageNumber}>Page {page}</span>
         <button onClick={handleNext} disabled={products.length < PAGE_SIZE}>Next</button>
       </div>
     </div>

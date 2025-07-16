@@ -1,0 +1,20 @@
+.container {
+  padding: 24px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.pageNumber {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+} 
